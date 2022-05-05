@@ -19,11 +19,15 @@ We will use linux on GCP
 # 4 - Use Objdump
 Objdump command in Linux is used to provide thorough information on object files
 
-## 4.1 objdump -t main.o
-Display the contents of symbol table (or tables) using the -t option
+## 4.1 objdump -T main.o 
+### 4.1.1 - Before
+Display the contents of dynamic symbol table using -T option
 
 ![4_objdump _t main](https://user-images.githubusercontent.com/29365707/166932631-55b1c8cb-2873-4448-b370-697fc2424719.png)
 
+## 4.1.2 - After
+
+![objdump](https://user-images.githubusercontent.com/29365707/167018953-a46fa94a-23c8-4023-aed7-584146d028ac.png)
 
 
 ## 4.2 objdump -T libComposant1.so
