@@ -41,8 +41,7 @@ int main(int argc, char ** argv)
 		exit(EXIT_FAILURE);
 	}
 
-	std::cout << "Valeur : " <<  dlsym_function(data1, data2) << std::endl;
-
+	
 
 		
 	//char *(*getComposant1Version)() = (char *(*)())dlsym(Composant1_, "getComposant1Versionv");
