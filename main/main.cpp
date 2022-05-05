@@ -1,8 +1,7 @@
 
 #include <iostream>
 #include <dlfcn.h>
-#include "Composant1.h"
-#include "Composant2.h"
+
 
 int main(int argc, char ** argv)
 {
@@ -50,14 +49,14 @@ int main(int argc, char ** argv)
         //        exit(EXIT_FAILURE);
         //}
 
-	int data1=3;
-	int data2=5;
-	int valeur1=composant1(data1,data2);
-	int valeur2=composant2(data1,data2);
+	//int data1=3;
+	//int data2=5;
+	//int valeur1=composant1(data1,data2);
+	//int valeur2=composant2(data1,data2);
 
 	//std::cout << getComposant1Version() << std::endl;
 	//std::cout << getComposant2Version() << std::endl;
-	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
+	//std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
 
 	//dlclose(Composant1_);
 	//dlclose(Composant2_);
