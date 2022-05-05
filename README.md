@@ -20,12 +20,13 @@ We will use linux on GCP
 Objdump command in Linux is used to provide thorough information on object files
 
 ## 4.1 objdump -T main.o 
-### 4.1.1 - Before
 Display the contents of dynamic symbol table using -T option
+
+### 4.1.1 - Before update
 
 ![4_objdump _t main](https://user-images.githubusercontent.com/29365707/166932631-55b1c8cb-2873-4448-b370-697fc2424719.png)
 
-## 4.1.2 - After
+## 4.1.2 - After update
 
 ![objdump](https://user-images.githubusercontent.com/29365707/167018953-a46fa94a-23c8-4023-aed7-584146d028ac.png)
 
@@ -34,5 +35,10 @@ Display the contents of dynamic symbol table using -T option
 Display the contents of dynamic symbol table using -T option
 Dynamic symbols are those which are resolved during run time.
 
+### 4.2.1 - Before Update 
+
 ![5_objdump_T_libcomposant1](https://user-images.githubusercontent.com/29365707/166933431-be139df9-07b2-4b6b-9f63-7d7d9d9443a6.png)
 
+### 4.2.2 - After Update
+
+![objdump1](https://user-images.githubusercontent.com/29365707/167018832-b1e150cf-7d6f-4eda-bf87-91a5af483896.png)
