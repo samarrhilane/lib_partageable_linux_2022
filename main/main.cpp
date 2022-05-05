@@ -28,9 +28,9 @@ int main(int argc, char ** argv)
 	int (*dlsym_function) (int, int);
 
 	if (choice == 1) {
-		dlsym_function = (int (*) (int, int)) dlsym(hundler, "composant1");
+		dlsym_function = (int (*) (int, int)) dlsym(hundler, "Composant1");
 	} else {
-		dlsym_function = (int (*) (int, int)) dlsym(hundler, "composant2");
+		dlsym_function = (int (*) (int, int)) dlsym(hundler, "Composant2");
 	}
 
 
