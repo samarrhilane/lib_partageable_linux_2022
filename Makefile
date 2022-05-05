@@ -1,7 +1,9 @@
 
-all: test
 LDFLAGS='-ldl'
-make install
+
+all: test
+
+
 test: install
 	cd bin; \
 	LD_LIBRARY_PATH=. ./main
