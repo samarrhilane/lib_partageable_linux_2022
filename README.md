@@ -10,9 +10,10 @@ We will use linux on GCP
 ![2_verifier g++ version](https://user-images.githubusercontent.com/29365707/166930072-8c351c31-a598-4553-ab73-4f241917d7ae.png)
 
 
-# 3 - Compile and execute "lib_partageable_linux_2022"
+# 3 - Compile and execute "lib_partageable_linux_2022" after updating 
 
-![compiler et executer lib_](https://user-images.githubusercontent.com/29365707/166930709-b9e14980-917a-49c6-a973-48d43110c662.png)
+![make](https://user-images.githubusercontent.com/29365707/167018461-67357bb4-440e-4f86-af9f-e7dcd544ab00.png)
+
 
 
 # 4 - Use Objdump
