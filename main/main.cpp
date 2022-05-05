@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include <dlfcn.h>
+#include "Composant1.h"
+#include "Composant2.h"
 
 int main(int argc, char ** argv)
 {
