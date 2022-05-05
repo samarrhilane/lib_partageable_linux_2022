@@ -2,60 +2,67 @@
 #include <iostream>
 #include <dlfcn.h>
 
-
-
 int main(int argc, char ** argv)
 {
 
-	void *Composant1_;
-	void *Composant2_;
+	int choice = -1;
 
-	Composant1_ = dlopen (argv[1], RTLD_LAZY);
-	if (!Composant1_) {
-		printf ("Error dlopen: %s\n", dlerror());
-        	exit(EXIT_FAILURE);
-    	}
+	while (choice != 1 &&  choice != 2) {
+		std::cout << "Enter the component id : " << std::endl;
+		std::cin >> choice;
+	}
+	void* hundler = nullptr;
 
-	Composant2_ = dlopen (argv[2], RTLD_LAZY);
-	if (!Composant2_) {
-		printf ("Error dlopen: %s\n", dlerror ());
+	if (choice == 1) {
+		hundler = dlopen("./libComposant1.so", RTLD_LAZY);
+	} else {
+		hundler = dlopen("./libComposant2.so", RTLD_LAZY);
+	}
+
+	if (!hundler) {
+		std::cerr << "dlopen : " << dlerror() << std::endl;
 		exit(EXIT_FAILURE);
-    	}
+	}
 
-	int (*composant1)(int, int) = (int (*)(int, int))dlsym(Composant1_, "Composant1-test1");
-	if (!composant1) {
-                printf ("Error dlsym: %s\n", dlerror());
-                exit(EXIT_FAILURE);
-        }
-	int (*composant2)(int, int) = (int (*)(int, int))dlsym(Composant2_, "Composant2-test2");
-	if (!composant2) {
-                printf ("Error dlsym: %s\n", dlerror());
-                exit(EXIT_FAILURE);
-        }
-	
-	char *(*getComposant1Version)() = (char *(*)())dlsym(Composant1_, "getComposant1Versionv");
-	if (!getComposant1Version) {
-                printf ("Error dlsym: %s\n", dlerror());
-                exit(EXIT_FAILURE);
-        }
-	
-	/*char *(*getComposant2Version)() = (char *(*)())dlsym(Composant2_, "getComposant2Versionv");
-	if (!getComposant2Version) {
-                printf ("Error dlsym: %s\n", dlerror());
-                exit(EXIT_FAILURE);
-        }*/
+	int (*dlsym_function) (int, int);
+
+	if (choice == 1) {
+		dlsym_function = (int (*) (int, int)) dlsym(hundler, "composant1");
+	} else {
+		dlsym_function = (int (*) (int, int)) dlsym(hundler, "composant2");
+	}
+
+
+	if (!dlsym_function) {
+		std::cerr << "dlsym : " << dlerror() << std::endl;
+		std::cout<<"ERREUR dlsym_function"<<std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	std::cout << "Valeur : " <<  dlsym_function(data1, data2) << std::endl;
+
+
+		
+	//char *(*getComposant1Version)() = (char *(*)())dlsym(Composant1_, "getComposant1Versionv");
+	//if (!getComposant1Version) {
+        //        printf ("Error dlsym: %s\n", dlerror());
+        //        exit(EXIT_FAILURE);
+        //}
 
 	int data1=3;
 	int data2=5;
 	int valeur1=composant1(data1,data2);
 	int valeur2=composant2(data1,data2);
 
-	std::cout << getComposant1Version() << std::endl;
+	//std::cout << getComposant1Version() << std::endl;
 	//std::cout << getComposant2Version() << std::endl;
 	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
 
-	dlclose(Composant1_);
-	dlclose(Composant2_); 
+	//dlclose(Composant1_);
+	//dlclose(Composant2_);
+	
+	dlclose(hundler);
+	exit(EXIT_SUCCESS);
 	
 
 }
