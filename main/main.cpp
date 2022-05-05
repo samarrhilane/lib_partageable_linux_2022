@@ -2,8 +2,6 @@
 #include <iostream>
 #include <dlfcn.h>
 
-#include "Composant1.h"
-#include "Composant2.h"
 
 
 int main(int argc, char ** argv)
@@ -57,7 +55,7 @@ int main(int argc, char ** argv)
 	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
 
 	dlclose(Composant1_);
-	dlclose(Composant2_);
+	dlclose(Composant2_); 
 	
 
 }
