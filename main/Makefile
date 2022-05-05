@@ -10,7 +10,7 @@ LDFLAGS=-L ${COMPONENTS_DIR} ${LD_COMPONENTS}
 EXE = main
 OBJS = main.o
 LDFLAGS='-ldl'
-make install
+
 
 include ../gcc.mk
 
