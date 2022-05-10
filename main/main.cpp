@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include <dlfcn.h>
+#include <dlfcn.h> // dynamic linking : Appeler dlopen dlsym
 
 
 int main(int argc, char ** argv)
